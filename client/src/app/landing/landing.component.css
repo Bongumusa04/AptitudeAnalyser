@@ -1,0 +1,13 @@
+.jumbotron-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    
+  }
+  .btn {
+    background-color: #0F204B;
+    border-color: #0F204B;
+    height: 50px;
+    width: 200px
+}

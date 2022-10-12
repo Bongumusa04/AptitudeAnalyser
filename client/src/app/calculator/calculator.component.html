@@ -1,0 +1,140 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Subject Name</th>
+        <th scope="col">Subject Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Home Language</th>
+        <td><select [(ngModel)]="Language1">
+            <option value="null">Select a subject...</option>
+    <option *ngFor="let subject of language1" value="{{subject.id}}">{{subject.subjectName}}</option>
+</select></td>
+        <td><select [(ngModel)]="mark1">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of L1marks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">First Additional Language</th>
+        <td><select [(ngModel)]="Language2">
+            <option value="null">Select a subject...</option>
+            <option *ngFor="let subject of language2 " value="{{subject.id}}">{{subject.subjectName}}</option>
+        </select></td>
+        <td><select [(ngModel)]="mark2">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of L2marks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">Maths</th>
+        <td >Mathematics</td>
+        <td><select [(ngModel)]="markM">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of Mathsmarks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">Life Orientation</th>
+        <td >Life Orientation</td>
+        <td><select [(ngModel)]="markL">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of Lomarks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">Subject 5</th>
+        <td ><select [(ngModel)]="Sub6">
+            <option value="null">Select a subject...</option>
+            <option *ngFor="let subject of subject6 " value="{{subject.id}}">{{subject.subjectName}}</option>
+        </select></td>
+        <td><select [(ngModel)]="markS6">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of S6marks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th scope="row">Subject 6</th>
+        <td ><select [(ngModel)]="Sub7">
+            <option value="null">Select a subject...</option>
+            <option *ngFor="let subject of subject7 " value="{{subject.id}}">{{subject.subjectName}}</option>
+        </select></td>
+        <td><select [(ngModel)]="markS7"> 
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of S7marks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <tr> 
+      <th scope="row">Physics</th>
+        <td >Physical Sciences</td>
+        <td><select [(ngModel)]="markPs">
+            <option value="null">Select a mark...</option>
+            <option *ngFor="let mark of Physicsmarks " value="{{mark.id}}">{{mark.subjectMark}}</option>
+        </select></td>
+      </tr>
+      <br/><br/>
+      
+      <div  *ngIf="(markM >= 1 && markM < 4 && ((+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)) < 32 )" class="row"> 
+        <h3>Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h3>
+        <h1>Sorry You do not qualify for any discipline within the IT field at UFS.</h1>
+      </div>
+      <div  *ngIf="(markM >= 4 && markPs >= 1)" class="row"> 
+        <h3>Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h3>
+        <h1>Congratulations! You qualify for the following disciplines: </h1>
+      </div>
+      <div  *ngIf="(markM >= 7 && markPs >= 6 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
+        <h3>Data Science</h3>
+        <p>Data Science combines the disciplines of Computer Science, Applied Mathematics, and Mathematical Statistics 
+          to implement scientific computerised methods and  processes, machine-learning algorithms, and data models to 
+          extract knowledge and insight from large structured and unstructured datasets that can be used to explain past
+           events or forecast future events.</p>
+         <h3>Career Possibilities</h3> 
+         <ul>
+          <li>Business Intelligece Developer</li>
+          <li>Data Scientist</li>
+          <li>Data Analyst</li>
+          <li>Data Engineer</li>
+         </ul> 
+         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+         <hr/>
+      </div>
+      <div  *ngIf="(markM >= 5 && markPs >= 5 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
+        <h3>Computer Science</h3>
+        <p>Computer science is the study of computers and computing as well as their theoretical and practical applications.
+           Computer science applies the principles of mathematics, engineering, and logic to a plethora of functions, including
+            algorithm formulation, software and hardware development, and artificial intelligence. </p> 
+         <ul>
+          <li> Programmer / Software Developer / Software Engineer</li>
+          <li> Web Designer / Web Developer</li>
+          <li>Database Administrator / Database Developer</li>
+          <li>Systems Administrator / Network Administrator</li>
+         </ul> 
+         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+      <hr/>
+      </div>
+      <div  *ngIf="(markM >= 4 && markPs >= 1 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 30)" class="row"> 
+        <h3>Informaion Systems</h3>
+        <p>This exciting new degree opens doors for IT fanatics who also want to be a manager or even start their 
+          own IT company. You will develop these skills through modules in Business Management, Entrepreneurship, 
+          and Marketing. You will also acquire the necessary skills to apply Information Technology solutions in 
+          the corporate world, with modules in Information Systems, Systems Analysis and Software Design, Systems 
+          Infrastructure and Integration, as well as Information Systems in Organisations.</p>
+         <h3>Career Possibilities</h3> 
+         <ul>
+          <li>Systems Analyst</li>
+          <li>IT Manager</li>
+          <li>Business Analyst</li>
+          <li>IT Entrepreneur</li>
+         </ul> 
+         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+         <hr/>
+      </div>
+     
+    </tbody>
+  </table>
+
+
+

@@ -1,0 +1,148 @@
+{
+    "questions": [{
+            "questionText": "Would you rather ",
+            "options": [{
+                    "text": "Work with a few people in an office",
+                    "weight": [0.55, 0.25, 0.2]
+                },
+                {
+                    "text": "Work alone in an office",
+                    "weight": [0.35, 0.55, 0.1]
+                },
+                {
+                    "text": "Engage with a lot of people",
+                    "weight": [0.20, 0.20, 0.60]
+                }
+            ]
+        },
+        {
+            "questionText": "What interests you?",
+            "options": [{
+                    "text": "Coding and computer languages",
+                    "weight": [0.55, 0.3, 0.15]
+                },
+                {
+                    "text": "Data control and analysis",
+                    "weight": [0.35, 0.55, 0.1]
+                },
+                {
+                    "text": "Manage, design, and monitor information systems ",
+                    "weight": [0.20, 0.20, 0.60]
+                }
+            ]
+        },
+        {
+            "questionText": "How interested are you in solving Maths problems",
+            "options": [{
+                    "text": "Very interested",
+                    "weight": [0.3, 0.6, 0.1]
+                },
+                {
+                    "text": "Interested",
+                    "weight": [0.5, 0.35, 0.15]
+                },
+                {
+                    "text": "Not interested",
+                    "weight": [0.25, 0.15, 0.60]
+                }
+            ]
+        },
+        {
+            "questionText": "Are you more impressed by someone that is ",
+            "options": [{
+                    "text": "Logical",
+                    "weight": [0.4, 0.4, 0.2]
+                },
+                {
+                    "text": "Sympathetic",
+                    "ds": true,
+                    "weight": [0.2, 0.2, 0.6]
+                }
+            ]
+        },
+        {
+            "questionText": "Which seems to be more natural and satisfying?",
+            "options": [{
+                    "text": "Frequent periods of quiet and concentration",
+                    "weight": [0.3, 0.5, 0.2]
+                },
+                {
+                    "text": "Frequent socializing and interacting with others",
+                    "weight": [0.25, 0.15, 0.6]
+                }
+            ]
+        },
+        {
+            "questionText": "I enjoy statistical work, especially data trends",
+            "options": [{
+                    "text": "Agree",
+                    "weight": [0.25, 0.6, 0.15]
+                },
+                {
+                    "text": "Slightly agree",
+                    "weight": [0.4, 0.4, 0.2]
+                },
+                {
+                    "text": "Disagree",
+                    "weight": [0.20, 0.20, 0.60]
+                }
+            ]
+        },
+        {
+            "questionText": "What interests you more?",
+            "options": [{
+                    "text": "Work on the software required by the client",
+                    "weight": [0.55, 0.3, 0.15]
+                },
+                {
+                    "text": "Get the trends of the possible software usage",
+                    "weight": [0.35, 0.55, 0.1]
+                },
+                {
+                    "text": "Being at the front end with the client",
+                    "weight": [0.20, 0.20, 0.60]
+                }
+            ]
+        },
+        {
+            "questionText": "Would you rather ",
+            "options": [{
+                    "text": "Solve a puzzle",
+                    "weight": [0.55, 0.55, 0.2]
+                },
+                {
+                    "text": "Read a book",
+                    "weight": [0.2, 0.2, 0.6]
+                }
+            ]
+        },
+        {
+            "questionText": "Which personality trait best suits you?",
+            "options": [{
+                    "text": "Technical acumen",
+                    "weight": [0.3, 0.5, 0.2]
+                },
+                {
+                    "text": "Business acumen",
+                    "weight": [0.2, 0.3, 0.5]
+                }
+            ]
+        },
+        {
+            "questionText": "Which personality trait best suits you?",
+            "options": [{
+                    "text": "Predominantly investigative individual",
+                    "weight": [0.25, 0.55, 0.2]
+                },
+                {
+                    "text": "Convetional",
+                    "weight": [0.35, 0.55, 0.1]
+                },
+                {
+                    "text": "Realistic",
+                    "weight": [0.20, 0.20, 0.60]
+                }
+            ]
+        }
+    ]
+}

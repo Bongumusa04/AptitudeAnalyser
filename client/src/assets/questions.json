@@ -1,0 +1,174 @@
+{
+    "questions": [{
+            "questionText": "Data science is the process of diverse set of data through ?",
+            "options": [{
+                    "text": "Organizing data"
+                    
+                },
+                {
+                    "text": "Processing data"
+                },
+                {
+                    "text": "Analysing data"
+                },
+                {
+                    "text": "All of the above",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following is the correct statement?",
+            "options": [{
+                    "text": "Raw data is original source of data",
+                    "correct": true
+                },
+                {
+                    "text": "Preprocessed data is original source of data"
+                },
+                {
+                    "text": "Raw data is the data obtained after processing steps"
+                },
+                {
+                    "text": "None of the above"
+                }
+            ]
+        },
+        {
+            "questionText": " ________ graph displays information as a series of data points connected by straight line segments.",
+            "options": [{
+                    "text": "Bar"
+                },
+                {
+                    "text": "Scatter"
+                },
+                {
+                    "text": "Histogram"
+                },
+                {
+                    "text": "Line",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Which is one of the significant data science skills?",
+            "options": [{
+                    "text": "Statistics"
+                },
+                {
+                    "text": "Data Visualization"
+                },
+                {
+                    "text": "Machine Learning"
+                },
+                {
+                    "text": "All of the above",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following step is performed by the data scientist after acquiring the data?",
+            "options": [{
+                    "text": "Data Cleansing",
+                    "correct": true
+                },
+                {
+                    "text": "Data Replication"
+                },
+                {
+                    "text": "Data Integration"
+                },
+                {
+                    "text": "All of the Mentioned"
+                }
+            ]
+        },
+        {
+            "questionText": "K- nearest neighbors algorithm is based on ______ learning",
+            "options": [{
+                    "text": "Supervised"
+                },
+                {
+                    "text": "Unsupervised",
+                    "correct": true
+                },
+                {
+                    "text": "Association"
+                },
+                {
+                    "text": "Correlation"
+                }
+            ]
+        },
+        {
+            "questionText": "CNN is mostly used for which type of data?",
+            "options": [{
+                    "text": "Structured Data"
+                },
+                {
+                    "text": "Unstructured Data",
+                    "correct": true
+                },
+                {
+                    "text": "Both Structured and Unstructured"
+                },
+                {
+                    "text": "None of the above"
+                }
+            ]
+        },
+        {
+            "questionText": "A perfect negative correlation is signified by ____________",
+            "options": [{
+                    "text": "0",
+                    "correct": true
+                },
+                {
+                    "text": "2"
+                },
+                {
+                    "text": "-1"
+                },
+                {
+                    "text": "1"
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following uses data on some object to predict values for other object ?",
+            "options": [{
+                    "text": "Inferential"
+                },
+                {
+                    "text": "Predictive",
+                    "correct": true
+                },
+                {
+                    "text": "Exploratory"
+                },
+                {
+                    "text": "None of the above"
+                }
+            ]
+        },
+        {
+            "questionText": "Advantages of Data Science are ",
+            "options": [{
+                    "text": "Data Science is Versatile"
+                },
+                {
+                    "text": "Abundance of Positions"
+                },
+                {
+                    "text": "A Highly Paid Career"
+                },
+                {
+                    "text": "All of the above",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "subjects": [{
+            "subjectText": "Home Language",
+            "subjectName": ["Afrikaans Home Language", 
+            "English Home Language",
+            "IsiZulu Home Language",
+            "IsiNdebele Home Language",
+            "IsiSwati Home Language",
+            "SeSotho Home Language",
+            "Sepedi Home Language",
+            "Setshwana Home Language",
+            "IsiXhosa Home Language",
+            "Tshivenda Home Language",
+            "Xitsonga Home Language"     
+            ]
+    },
+        {
+            "subjectText": "First Additional Language",
+            "subjectName": ["Afrikaans First Additional Language", 
+            "English First Additional Language",
+            "IsiZulu First Additional Language",
+            "IsiNdebele First Additional Language",
+            "IsiSwati First Additionalome Language",
+            "SeSotho First Additional Language",
+            "Sepedi First Additional Language",
+            "Setshwana First Additional Language",
+            "IsiXhosa First Additional Language",
+            "Tshivenda First Additional Language",
+            "Xitsonga First Additional Language" 
+            ]
+        },
+        
+        {
+            "subjectText": "Maths",
+            "subjectName": ["Mathematics", 
+            "Maths Literacy"   
+            ]
+        },
+        
+        {
+            "subjectText": "Life Orientation",
+            "subjectName": ["Life Orientation"    
+            ]
+        },
+        
+        {
+             "subjectText": "Other subjects",
+            "subjectName": ["Afrikaans Second Additional Language", 
+            "English Second Additional Language",
+            "IsiZulu Second Additional Language",
+            "IsiNdebele Second Additional Language",
+            "IsiSwati Second Additionalome Language",
+            "SeSotho Second Additional Language",
+            "Sepedi Second Additional Language",
+            "Setshwana Second Additional Language",
+            "IsiXhosa Second Additional Language",
+            "Tshivenda Second Additional Language",
+            "Xitsonga Second Additional Language",
+            "Accounting",
+            "Agriculture",
+            "Arabic Second Additional Language",
+            "Business Studies",
+            "Civil Technology",
+            "Computer Applications Technology",
+            "Consumer Studies",
+            "Design",
+            "Dramatic Arts",
+            "Economics",
+            "Electrical Enguneerintg and Design",
+            "Geography",
+            "History",
+            "Information Technology",
+            "Life Sciences",
+            "Tourism",
+            "Music"  
+            ]
+        },
+        
+        {
+            "subjectText": "Physical Sciences",
+            "subjectName": ["Physical Sciences"     
+            ]
+        }
+    ],
+    "subjectMark": [{
+        "subjectText": "Subject Mark",
+        "subjectName": ["0% - 29% (level 1)", 
+        "30% - 39% (level 2)",
+        "40% - 49% (level 3)",
+        "50% - 59% (level 4)",
+        "60% - 69% (level 5)",
+        "70% - 79% (level 6)",
+        "80% - 89% (level 7)",
+        "90% - 100% (level 8)"     
+        ]
+    }
+    ]
+}

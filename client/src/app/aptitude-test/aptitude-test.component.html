@@ -1,0 +1,97 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="quiz-header">
+                <h4 style="font-family: cursive;">Aptitude Analyser!</h4>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!isQuizCompleted">
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <ul>
+                        <li><h5>Please select the answers that best suits you.</h5></li>
+                    </ul>
+                </div> 
+                <div class="question-remain">
+                    <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                </div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                </div>
+            </div>
+            <div class="options">
+                <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                    <li (click)="answer(currentQuestion+1,option)">
+                        <div  class="card">
+                            {{option.text}}
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-3x" aria-hidden="true"></i></button>
+                <button class="btn" (click)="nextQuestion()"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isQuizCompleted">
+            <div class="row d-flex justify-content-between">
+                <h1>You are most likely to succeed in the following disciplines: </h1>
+                <div  *ngIf="DSpoints > CSpoints && DSpoints > ISpoints" class="row"> 
+                    <h3>Data Science</h3>
+                    <p>Data Science combines the disciplines of Computer Science, Applied Mathematics, and Mathematical Statistics 
+                      to implement scientific computerised methods and  processes, machine-learning algorithms, and data models to 
+                      extract knowledge and insight from large structured and unstructured datasets that can be used to explain past
+                       events or forecast future events.</p>
+                     <h3>Career Possibilities</h3> 
+                     <ul>
+                      <li>Business Intelligece Developer</li>
+                      <li>Data Scientist</li>
+                      <li>Data Analyst</li>
+                      <li>Data Engineer</li>
+                     </ul> 
+                     <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+                  </div><hr/>
+                  <div  *ngIf="CSpoints > ISpoints && CSpoints > DSpoints" class="row"> 
+                    <h3>Computer Science</h3>
+                    <p>Computer science is the study of computers and computing as well as their theoretical and practical applications.
+                       Computer science applies the principles of mathematics, engineering, and logic to a plethora of functions, including
+                        algorithm formulation, software and hardware development, and artificial intelligence. </p> 
+                     <ul>
+                      <li> Programmer / Software Developer / Software Engineer</li>
+                      <li> Web Designer / Web Developer</li>
+                      <li>Database Administrator / Database Developer</li>
+                      <li>Systems Administrator / Network Administrator</li>
+                     </ul> 
+                     <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+                  </div><hr/>
+                  <div  *ngIf="ISpoints > CSpoints && ISpoints > DSpoints" class="row"> 
+                    <h3>Informaion Systems</h3>
+                    <p>This exciting new degree opens doors for IT fanatics who also want to be a manager or even start their 
+                      own IT company. You will develop these skills through modules in Business Management, Entrepreneurship, 
+                      and Marketing. You will also acquire the necessary skills to apply Information Technology solutions in 
+                      the corporate world, with modules in Information Systems, Systems Analysis and Software Design, Systems 
+                      Infrastructure and Integration, as well as Information Systems in Organisations.</p>
+                     <h3>Career Possibilities</h3> 
+                     <ul>
+                      <li>Systems Analyst</li>
+                      <li>IT Manager</li>
+                      <li>Business Analyst</li>
+                      <li>IT Entrepreneur</li>
+                     </ul> 
+                     <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
+                  </div><hr/>
+                 
+            </div>
+        </ng-container>
+
+    </div>
+</div>

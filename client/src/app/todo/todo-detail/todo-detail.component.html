@@ -1,0 +1,20 @@
+<div class="card" *ngIf="todo != null">
+    <div class="card-body mt-4">
+        <strong>Date</strong>
+        <p>{{todo.date | date}}</p>
+    </div>
+    <div class="card-body">
+        <strong>Description</strong>
+        <p>{{todo.description}}</p>
+    </div>
+    <div class="card-body">
+        <strong>Name</strong>
+        <p>{{todo.name }}</p>
+    </div>
+    <div class="card-footer">
+        <div class="btn-group d-flex">
+            <a class="btn btn-primary" routerLink="/todo/edit">Edit</a>
+            <button class="btn btn-danger" (click)="deleteList()">Delete</button>
+        </div>
+    </div>
+</div>

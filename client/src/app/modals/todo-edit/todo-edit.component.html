@@ -1,0 +1,28 @@
+<form [formGroup]="editForm" *ngFor="let todo of todos"  id="editForm" class="mt-4" (ngSubmit)="editList(todo.id)">
+    <div class="alert alert-info mb-4" *ngIf="editForm.dirty">
+        <strong>Information</strong> You have made changes. Any unsaved changes will be lost.
+    </div>
+    <div  class="form-group">
+        <h4>Date</h4>
+        <app-date-input [formControl]="editForm.controls['date']" [ngModel]="todo.date | date: 'yyyy-mmmm'" (ngModelChanged)="todo.date=$event" [label]="'Date'"></app-date-input>
+    </div>
+    <div class="form-group">
+        <h4 class="mt-4">Name</h4>
+        <app-text-input [formControl]="editForm.controls['name']" [(ngModel)]="todo.name" [label]="'Name'" [type]="'text'"></app-text-input>
+    </div>
+    <div class="form-group">
+        <h4 class="mt-4">Description</h4>
+        <textarea 
+            [class.is-invalid]="editForm.get('description').errors && editForm.get('description').touched"
+            class="form-control" 
+            formControlName="description" [(ngModel)]="todo.description" rows="6">
+        </textarea>
+        <div class="invalid-feedback">Please enter a description</div>
+    </div>
+    
+    <div class="form-group text-center mt-4">
+        <a type="button" class="btn btn-default me-4" routerLink="/todo/{{todo.id}}">Back</a>
+        <button [disabled]="!editForm.dirty" type="button" class="btn btn-success" (click)="updateList()">Save
+            changes</button>
+    </div>
+</form>
