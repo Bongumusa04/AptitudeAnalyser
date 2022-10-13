@@ -1,0 +1,173 @@
+{
+    "questions": [{
+            "questionText": "A(n) _________ is a set of processes and procedures that transform data into information and knowledge.",
+            "options": [{
+                    "text": "Knowledge system"
+                },
+                {
+                    "text": "Computer system"
+                },
+                {
+                    "text": "information system",
+                    "correct": true
+                },
+                {
+                    "text": "Database system"
+                }
+            ]
+        },
+        {
+            "questionText": "A system is called ____________ when the inputs, process and the outputs are known with certainty.",
+            "options": [{
+                    "text": "Deterministic",
+                    "correct": true
+                },
+                {
+                    "text": "Probablistics"
+                },
+                {
+                    "text": "Open"
+                },
+                {
+                    "text": "Close"
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following is a computer based system that stores and manipulates data that are viewed from a geographical point or reference?",
+            "options": [{
+                    "text": "Database System (DS)"
+                },
+                {
+                    "text": "Geographic System (GS)"
+                },
+                {
+                    "text": "Geographical Information System (GIS) ",
+                    "correct": true
+                },
+                {
+                    "text": "Software System (SS) "
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following is a program that models the pattern recognition capabilities of the human brain.",
+            "options": [{
+                    "text": "An expert system"
+                },
+                {
+                    "text": "Artificial Intelligence"
+                },
+                {
+                    "text": "Development engine"
+                },
+                {
+                    "text": "Neutral network",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "'www' stands for _____",
+            "options": [{
+                    "text": "World Word Web"
+                },
+                {
+                    "text": "World Wide Web",
+                    "correct": true
+                },
+                {
+                    "text": "World White Web"
+                },
+                {
+                    "text": "World Work Web"
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following is NOT an objective of MIS?",
+            "options": [{
+                    "text": "Facilitate the decisions-making process"
+                },
+                {
+                    "text": "Provide requisite information at each level of management "
+                },
+                {
+                    "text": "Support decision-making"
+                },
+                {
+                    "text": "recruit people for system",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Encoding or scrambling data for transmission across a network is known as:",
+            "options": [{
+                    "text": "Decryption"
+                },
+                {
+                    "text": "Protection"
+                },
+                {
+                    "text": "Detection"
+                },
+                {
+                    "text": "Encryption",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following is the appropriate definition of Information Technology?",
+            "options": [{
+                    "text": "Information Technology refers to the use of hardware and software for processing information"
+                },
+                {
+                    "text": "Information Technology refers to the use of hardware and software for distribution of useful information"
+                },
+                {
+                    "text": "Information Technology refers to the use of hardware and software for storage, retrieval, processing and distributing information of many kinds",
+                    "correct": true
+                },
+                {
+                    "text": "Information Technology refers to the use of principles of Physical sciences and Social sciences for processing of information of many kinds"
+                }
+            ]
+        },
+        {
+            "questionText": "What type of computers are client computers (most of the time) in a client-server system?",
+            "options": [{
+                    "text": "Mainframe"
+                },
+                {
+                    "text": "Mini-computer"
+                },
+                {
+                    "text": "Microcomputer",
+                    "correct": true
+                },
+                {
+                    "text": "PDA"
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following best describes a computer-based information system?",
+            "options": [{
+                    "text": "Inputting data"
+                },
+                {
+                    "text": "Processing data"
+                },
+                {
+                    "text": "Performing complex mathematical calculations"
+                },
+                {
+                    "text": "A system in which a computer is used to turn data into information",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+}

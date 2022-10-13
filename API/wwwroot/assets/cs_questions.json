@@ -1,0 +1,173 @@
+{
+    "questions": [{
+            "questionText": "What is a URL?",
+            "options": [{
+                    "text": "A computer software program"
+                },
+                {
+                    "text": "A type of UFO"
+                },
+                {
+                    "text": "The address of a document or 'page' on the World Wide Web",
+                    "correct": true
+                },
+                {
+                    "text": "An acronym for Uniform Resources Learning"
+                }
+            ]
+        },
+        {
+            "questionText": "What is a compiler?",
+            "options": [{
+                    "text": "System program that converts instructions to machine language",
+                    "correct": true
+                },
+                {
+                    "text": "System program that writes instructions to perform"
+                },
+                {
+                    "text": "System program that converts machine language to high-level language"
+                },
+                {
+                    "text": "None of the above"
+                }
+            ]
+        },
+        {
+            "questionText": " Compiler should report the presence of ________ in the source program, in the translation process.",
+            "options": [{
+                    "text": "Objects"
+                },
+                {
+                    "text": "Classes"
+                },
+                {
+                    "text": "Errors",
+                    "correct": true
+                },
+                {
+                    "text": "Text"
+                }
+            ]
+        },
+        {
+            "questionText": "Identify the data structure which has minimum access time in case of symbol table implementation?",
+            "options": [{
+                    "text": "Hash table",
+                    "correct": true
+                },
+                {
+                    "text": "Self-organizing list"
+                },
+                {
+                    "text": "Linear"
+                },
+                {
+                    "text": "Search tree"
+                }
+            ]
+        },
+        {
+            "questionText": "Which of the following error can a compiler check?",
+            "options": [{
+                    "text": "Syntax Error",
+                    "correct": true
+                },
+                {
+                    "text": "Logical Error"
+                },
+                {
+                    "text": "Both (A) and (B)"
+                },
+                {
+                    "text": "Compiler cannot check errors"
+                }
+            ]
+        },
+        {
+            "questionText": "SDLC stands for __________",
+            "options": [{
+                    "text": "Software design life cycle"
+                },
+                {
+                    "text": "Software development life cycle",
+                    "correct": true
+                },
+                {
+                    "text": "System design life cycle"
+                },
+                {
+                    "text": "System development life cycle"
+                }
+            ]
+        },
+        {
+            "questionText": "Agile Software Development is based on",
+            "options": [{
+                    "text": "Incremental Development"
+                },
+                {
+                    "text": "Iterative Development"
+                },
+                {
+                    "text": "Both Incremental and Iterative Development",
+                    "correct": true
+                },
+                {
+                    "text": "Linear Development"
+                }
+            ]
+        },
+        {
+            "questionText": "What are the attributes of good software?",
+            "options": [{
+                    "text": "Software maintainability"
+                },
+                {
+                    "text": "Software maintainability & functionality",
+                    "correct": true
+                },
+                {
+                    "text": "Software functionality"
+                },
+                {
+                    "text": "Software development"
+                }
+            ]
+        },
+        {
+            "questionText": "How can we describe an array in the best possible way?",
+            "options": [{
+                    "text": "The Array shows a hierarchical structure"
+                },
+                {
+                    "text": "Arrays are immutable"
+                },
+                {
+                    "text": "Container that stores the elements of similar types",
+                    "correct": true
+                },
+                {
+                    "text": "The Array is not a data structure"
+                }
+            ]
+        },
+        {
+            "questionText": "Which data structure allows deleting data elements from front and inserting at rear?",
+            "options": [{
+                    "text": "Binary search tree"
+                },
+                {
+                    "text": "Stacks"
+                },
+                {
+                    "text": "Deques"
+                },
+                {
+                    "text": "Queues",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+}
