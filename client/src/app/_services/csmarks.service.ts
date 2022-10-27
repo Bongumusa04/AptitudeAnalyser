@@ -11,7 +11,6 @@ import { AccountService } from './account.service';
 })
 export class CsmarksService {
   baseUrl = environment.apiUrl;
-  toDo: Mark[]=[];
   user: User;
 
   constructor(private http: HttpClient, private accountService: AccountService) { 
@@ -20,14 +19,13 @@ export class CsmarksService {
     })
   }
 
-  getCSMark() {
+  getCSMark(username: string) {
 
-    return this.http.get<Mark[]>(this.baseUrl + 'Mark/');
+    return this.http.get<Mark[]>(this.baseUrl + 'Mark/' + username);
   }
 
   
   addMark(mark: number) {
     return this.http.post<Mark>(this.baseUrl, + 'Mark/'+ mark);
- 
   }
 }

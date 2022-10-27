@@ -27,7 +27,7 @@ namespace API.Controllers
         public  IActionResult Add(Marks marks)
         {
             var username = User.GetUsername();
-            var mark = new Marks()
+            var mark = new Marks
             {
                 Username = username,
                 MarkCS = marks.MarkCS

@@ -29,7 +29,7 @@ namespace API.Data
         {
              return await _context.Marks
                         .Where(e => e.Username == username)
-                        .FirstOrDefaultAsync();
+                        .FirstOrDefaultAsync();          
         }
 
     }

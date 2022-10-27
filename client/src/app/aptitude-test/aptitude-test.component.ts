@@ -32,9 +32,11 @@ export class AptitudeTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 

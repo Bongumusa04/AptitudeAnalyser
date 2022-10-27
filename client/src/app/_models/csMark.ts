@@ -1,4 +1,4 @@
 export interface Mark{
-    id: number;
+    username: string;
     Mark: number;
 }

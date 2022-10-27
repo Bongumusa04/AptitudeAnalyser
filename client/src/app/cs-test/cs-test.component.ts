@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, take } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { delay, interval, take } from 'rxjs';
 import { Mark } from '../_models/mark';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
@@ -12,7 +13,7 @@ import { QuestionService } from '../_services/question.service';
   styleUrls: ['./cs-test.component.css']
 })
 export class CsTestComponent implements OnInit {
-
+  @Input() markCs: Mark[] =[]
   public questionList: any = [];
   public currentQuestion: number = 0;
   public points: number = 0;
@@ -26,7 +27,7 @@ export class CsTestComponent implements OnInit {
   mark: Mark;
   marks: Mark[] = [];
 
- constructor(public accountService: AccountService,private questionService: QuestionService, private csMarksService: CsmarksService) {
+ constructor(public accountService: AccountService,private questionService: QuestionService, private csMarksService: CsmarksService, private toastr: ToastrService) {
   this.accountService.currentUser$.pipe(take(1)).subscribe(user =>{
     this.user = user;
     this.user.points = this.points; 
@@ -53,9 +54,11 @@ export class CsTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 
@@ -66,13 +69,14 @@ export class CsTestComponent implements OnInit {
     }
     if (option.correct) {
       this.points += 1;
-      localStorage.setItem('csMark', JSON.stringify(this.points));
+     localStorage.setItem('csMark', JSON.stringify(this.points));
+      
       this.correctAnswer++;
       setTimeout(() => {
         this.currentQuestion++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 3000);
 
     } else {
       setTimeout(() => {
@@ -80,7 +84,7 @@ export class CsTestComponent implements OnInit {
         this.inCorrectAnswer++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 3000);
      
     }
   }
@@ -124,10 +128,11 @@ export class CsTestComponent implements OnInit {
 
   }
   onSubmit(mark: number) {
-    this.csMarksService.addMark(mark).subscribe(() => {
-       error => {
-        console.log(error);
-      }});
+    this.csMarksService.addMark(mark).subscribe(CsMark => 
+      {
+        this.markCs.push(CsMark);
+        this.toastr.success('Marks Added');
+      });
     } 
 
 }
