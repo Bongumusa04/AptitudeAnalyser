@@ -122,14 +122,14 @@
         {
             "questionText": "A perfect negative correlation is signified by ____________",
             "options": [{
-                    "text": "0",
-                    "correct": true
+                    "text": "0"
                 },
                 {
                     "text": "2"
                 },
                 {
-                    "text": "-1"
+                    "text": "-1",
+                    "correct": true
                 },
                 {
                     "text": "1"

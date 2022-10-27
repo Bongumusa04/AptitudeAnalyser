@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, take } from 'rxjs';
+import { delay, interval, take } from 'rxjs';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
 import { QuestionService } from '../_services/question.service';
@@ -46,9 +46,11 @@ export class IsTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 
@@ -64,7 +66,7 @@ export class IsTestComponent implements OnInit {
         this.currentQuestion++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 3000);
 
 
     } else {
@@ -73,7 +75,7 @@ export class IsTestComponent implements OnInit {
         this.inCorrectAnswer++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 3000);
 
     }
   }

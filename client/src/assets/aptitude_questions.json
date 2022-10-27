@@ -129,20 +129,21 @@
             ]
         },
         {
-            "questionText": "Which personality trait best suits you?",
+            "questionText": "Do you like pineapple on pizza?",
             "options": [{
-                    "text": "Predominantly investigative individual",
-                    "weight": [0.25, 0.55, 0.2]
-                },
-                {
-                    "text": "Convetional",
+                    "text": "No",
                     "weight": [0.35, 0.55, 0.1]
                 },
                 {
-                    "text": "Realistic",
+                    "text": "Maybe",
+                    "weight": [0.5, 0.35, 0.15]
+                },
+                {
+                    "text": "Yes",
                     "weight": [0.20, 0.20, 0.60]
                 }
             ]
         }
+
     ]
 }

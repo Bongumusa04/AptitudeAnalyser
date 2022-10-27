@@ -1,7 +1,8 @@
+<h5 style="color:#ff0000">*Please note: you need to have Mathematics and Physics to qualify for any IT dicipline at UFS.</h5>
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col"></th>
         <th scope="col">Subject Name</th>
         <th scope="col">Subject Mark</th>
       </tr>
@@ -77,64 +78,89 @@
       </tr>
       <br/><br/>
       
-      <div  *ngIf="(markM >= 1 && markM < 4 && ((+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)) < 32 )" class="row"> 
-        <h3>Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h3>
-        <h1>Sorry You do not qualify for any discipline within the IT field at UFS.</h1>
-      </div>
-      <div  *ngIf="(markM >= 4 && markPs >= 1)" class="row"> 
-        <h3>Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h3>
-        <h1>Congratulations! You qualify for the following disciplines: </h1>
-      </div>
-      <div  *ngIf="(markM >= 7 && markPs >= 6 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
-        <h3>Data Science</h3>
-        <p>Data Science combines the disciplines of Computer Science, Applied Mathematics, and Mathematical Statistics 
-          to implement scientific computerised methods and  processes, machine-learning algorithms, and data models to 
-          extract knowledge and insight from large structured and unstructured datasets that can be used to explain past
-           events or forecast future events.</p>
-         <h3>Career Possibilities</h3> 
-         <ul>
-          <li>Business Intelligece Developer</li>
-          <li>Data Scientist</li>
-          <li>Data Analyst</li>
-          <li>Data Engineer</li>
-         </ul> 
-         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
-         <hr/>
-      </div>
-      <div  *ngIf="(markM >= 5 && markPs >= 5 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
-        <h3>Computer Science</h3>
-        <p>Computer science is the study of computers and computing as well as their theoretical and practical applications.
-           Computer science applies the principles of mathematics, engineering, and logic to a plethora of functions, including
-            algorithm formulation, software and hardware development, and artificial intelligence. </p> 
-         <ul>
-          <li> Programmer / Software Developer / Software Engineer</li>
-          <li> Web Designer / Web Developer</li>
-          <li>Database Administrator / Database Developer</li>
-          <li>Systems Administrator / Network Administrator</li>
-         </ul> 
-         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
-      <hr/>
-      </div>
-      <div  *ngIf="(markM >= 4 && markPs >= 1 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 30)" class="row"> 
-        <h3>Informaion Systems</h3>
-        <p>This exciting new degree opens doors for IT fanatics who also want to be a manager or even start their 
-          own IT company. You will develop these skills through modules in Business Management, Entrepreneurship, 
-          and Marketing. You will also acquire the necessary skills to apply Information Technology solutions in 
-          the corporate world, with modules in Information Systems, Systems Analysis and Software Design, Systems 
-          Infrastructure and Integration, as well as Information Systems in Organisations.</p>
-         <h3>Career Possibilities</h3> 
-         <ul>
-          <li>Systems Analyst</li>
-          <li>IT Manager</li>
-          <li>Business Analyst</li>
-          <li>IT Entrepreneur</li>
-         </ul> 
-         <p>Click <a href="/challenges">Here</a> to view projects that you can do.</p>
-         <hr/>
-      </div>
-     
     </tbody>
   </table>
 
+  
+  <div  *ngIf="(markM >= 1 && markPs >= 1 &&markM < 4 && ((+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)) < 30 )" class="row"> 
+    <h4 style="color:#ff0000">Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h4>
+    <h3 style="color:#ff0000">Sorry, you do not qualify for any discipline within the IT field at UFS.</h3>
+  </div>
+  <div  *ngIf="(markM >= 4 && markPs >= 1) && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 30" class="row"> 
+    <h4 style="color:#008000">Your Total APS is: {{(+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs)}}</h4>
+    <h3 style="color:#008000">Congratulations! You qualify for the following disciplines: </h3>
+  </div>
+  <div  *ngIf="(markM >= 7 && markPs >= 6 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
+    <h3>Data Science</h3>
+    <p>Data Science combines the disciplines of Computer Science, Applied Mathematics, and Mathematical Statistics 
+      to implement scientific computerised methods and  processes, machine-learning algorithms, and data models to 
+      extract knowledge and insight from large structured and unstructured datasets that can be used to explain past
+       events or forecast future events.</p>
+     <h5>Career Possibilities</h5> 
+     <ul>
+      <li>Business Intelligece Developer</li>
+      <li>Data Scientist</li>
+      <li>Data Analyst</li>
+      <li>Data Engineer</li>
+     </ul> 
+     <h5> Possible Challenges</h5> 
+     <ul>
+      <li>Continous learning of new technology</li>
+      <li>Identifying the data problem</li>
+      <li>learning new work outside the curriculum</li>
+      <li>Data cleansing</li>
+      <li>Understanding Math concepts</li>
+     </ul> 
+     
+     <p>Click <a href="/challenges">here</a> to view projects that you can do.</p>
+     <hr/>
+  </div>
+  <div  *ngIf="(markM >= 5 && markPs >= 5 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 32)" class="row"> 
+    <h3>Computer Science</h3>
+    <p>Computer science is the study of computers and computing as well as their theoretical and practical applications.
+       Computer science applies the principles of mathematics, engineering, and logic to a plethora of functions, including
+        algorithm formulation, software and hardware development, and artificial intelligence. </p> 
+        <h5>Career Possibilities</h5> 
+     <ul>
+      <li> Programmer / Software Developer / Software Engineer</li>
+      <li> Web Designer / Web Developer</li>
+      <li>Database Administrator / Database Developer</li>
+      <li>Systems Administrator / Network Administrator</li>
+     </ul> 
+     <h5> Possible Challenges</h5> 
+     <ul>
+      <li>Continous learning of new technology</li>
+      <li>building a portfolio of projects</li>
+      <li>learning new work outside the curriculum</li>
+      <li>Knowledge of business is crucial for team-leading</li>
+     </ul> 
+     <p>Click <a href="/challenges">here</a> to view projects that you can do.</p>
+  <hr/>
+  </div>
+  <div  *ngIf="(markM >= 4 && markPs >= 1 && (+mark1) + (+mark2) + (+markM) + (+markS6) + (+markS7) + (+markPs) >= 30)" class="row"> 
+    <h3>Informaion Systems</h3>
+    <p>This exciting new degree opens doors for IT fanatics who also want to be a manager or even start their 
+      own IT company. You will develop these skills through modules in Business Management, Entrepreneurship, 
+      and Marketing. You will also acquire the necessary skills to apply Information Technology solutions in 
+      the corporate world, with modules in Information Systems, Systems Analysis and Software Design, Systems 
+      Infrastructure and Integration, as well as Information Systems in Organisations.</p>
+     <h5>Career Possibilities</h5> 
+     <ul>
+      <li>Systems Analyst</li>
+      <li>IT Manager</li>
+      <li>Business Analyst</li>
+      <li>IT Entrepreneur</li>
+     </ul> 
+     <h5> Possible Challenges</h5> 
+     <ul>
+      <li>Continous learning of new technology</li>
+      <li>Understanding all the business concepts</li>
+      <li>learning how to express yourself</li>
+      <li>being able to distinguish between a good and bad software</li>
+     </ul> 
+     <p>Click <a href="/challenges">here</a> to view projects that you can do.</p>
+     <hr/>
+  </div>
+ 
 
 
