@@ -31,7 +31,11 @@
               <a class="nav-link" routerLink="/challenges" routerLinkActive="active">Quizzes</a>
             </li>
          
-        </ng-container>              
+        </ng-container>     
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+        </li>         
       </ul>
 
       <div  *ngIf="(accountService.currentUser$ |async) as user" class="row"> 
