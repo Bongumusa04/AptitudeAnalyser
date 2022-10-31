@@ -38,13 +38,13 @@
             <div class="d-flex justify-content-between">
                 <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
                 <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-3x" aria-hidden="true"></i></button>
-                <button [disabled]="currentQuestion===10" class="btn" (click)="nextQuestion()"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+                <button [disabled]="currentQuestion+1===questionList.length" class="btn" (click)="nextQuestion()"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
             </div>
         </ng-container>
 
         <ng-container *ngIf="isQuizCompleted">
             <div class="row d-flex justify-content-between">
-                <h1>You are most likely to succeed in the following disciplines: </h1>
+                <h1>You are most likely to succeed in the following discipline: </h1>
                 <div  *ngIf="DSpoints > CSpoints && DSpoints > ISpoints" class="row"> 
                     <h3>Data Science</h3>
                     <p>Data Science combines the disciplines of Computer Science, Applied Mathematics, and Mathematical Statistics 
