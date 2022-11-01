@@ -21,10 +21,16 @@ export class AptitudeTestComponent implements OnInit {
   constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem("name")!;
     this.getAllQuestions();
   }
   getAllQuestions() {
+    if(parseInt(localStorage.getItem('atCurrentQ')) > 0){
+      this.progress = JSON.parse(localStorage.getItem('atprogress'));
+      this.currentQuestion = parseInt(localStorage.getItem('atCurrentQ'));
+      this.CSpoints = parseInt(localStorage.getItem('CSpoints'));
+      this.DSpoints = parseInt(localStorage.getItem('DSpoints'));
+      this.DSpoints = parseInt(localStorage.getItem('ISpoints'));
+    }
     this.questionService.getAptitudeQuestionJson()
       .subscribe(res => {
         this.questionList = res.questions;
@@ -32,10 +38,12 @@ export class AptitudeTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    localStorage.setItem('atCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    localStorage.setItem('atCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
@@ -46,9 +54,13 @@ export class AptitudeTestComponent implements OnInit {
     }
     this.CSpoints += option.weight[0];
       this.DSpoints += option.weight[1];
-      this.ISpoints += option.weight[2];       
+      this.ISpoints += option.weight[2];   
+      localStorage.setItem('CSpoints', JSON.stringify( this.CSpoints));
+      localStorage.setItem('DSpoints', JSON.stringify( this.DSpoints));
+      localStorage.setItem('ISpoints', JSON.stringify( this.ISpoints));    
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('atCurrentQ', JSON.stringify( this.currentQuestion));
         this.getProgressPercent();
       }, 1000);
   }
@@ -60,10 +72,15 @@ export class AptitudeTestComponent implements OnInit {
     this.DSpoints = 0;
     this.currentQuestion = 0;
     this.progress = "0";
-
+    localStorage.removeItem('atprogress');
+    localStorage.removeItem('atCurrentQ');
+    localStorage.removeItem('CSpoints');
+    localStorage.removeItem('DSpoints');
+    localStorage.removeItem('ISpoints');
   }
   getProgressPercent() {
     this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    localStorage.setItem('atprogress', JSON.stringify(this.progress));
     return this.progress;
 
   }

@@ -37,11 +37,17 @@ export class CsTestComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(parseInt(localStorage.getItem('csCurrentQ')) > 0){
+      this.progress = JSON.parse(localStorage.getItem('csprogress'));
+      this.currentQuestion = parseInt(localStorage.getItem('csCurrentQ'));
+      this.correctAnswer = parseInt(localStorage.getItem('cscorrect'));
+      this.inCorrectAnswer = parseInt(localStorage.getItem('csincorrect'));
+      this.isQuizCompleted = JSON.parse(localStorage.getItem('csCompleted'));
+    }
     this.getAllQuestions();
     this.startCounter();
     if(this.points > 0){
       this.isQuizCompleted = true;
-      JSON.parse(localStorage.getItem('csMarks'))
     }
   }
 
@@ -54,26 +60,32 @@ export class CsTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.inCorrectAnswer++;
+    localStorage.setItem('csincorrect', JSON.stringify(this.inCorrectAnswer));
+    localStorage.setItem('csCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    localStorage.setItem('csCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 
     if(currentQno === this.questionList.length ){
       this.isQuizCompleted = true;
+      localStorage.setItem('csCompleted', JSON.stringify( this.isQuizCompleted));
       this.stopCounter();
 
     }
     if (option.correct) {
       this.points += 1;
-     localStorage.setItem('csMark', JSON.stringify(this.points));
-      
+      localStorage.setItem('csMark', JSON.stringify(this.points));
       this.correctAnswer++;
+      localStorage.setItem('cscorrect', JSON.stringify(this.correctAnswer));
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('csCurrentQ', JSON.stringify( this.currentQuestion));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -81,7 +93,9 @@ export class CsTestComponent implements OnInit {
     } else {
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('csCurrentQ', JSON.stringify( this.currentQuestion));
         this.inCorrectAnswer++;
+        localStorage.setItem('csincorrect', JSON.stringify(this.inCorrectAnswer));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -120,10 +134,17 @@ export class CsTestComponent implements OnInit {
     this.counter = 60;   
     this.currentQuestion = 0;
     this.progress = "0";
+    localStorage.removeItem('csprogress');
+    localStorage.removeItem('csCurrentQ');
+    localStorage.removeItem('cscorrect');
+    localStorage.removeItem('csincorrect');
+    localStorage.removeItem('csisMarks');
+    localStorage.removeItem('csCompleted');
 
   }
   getProgressPercent() {
     this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    localStorage.setItem('csprogress', JSON.stringify(this.progress));
     return this.progress;
 
   }

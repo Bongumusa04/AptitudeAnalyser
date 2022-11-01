@@ -31,11 +31,17 @@ export class AnalyserComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(parseInt(localStorage.getItem('dsCurrentQ')) > 0){
+      this.progress = JSON.parse(localStorage.getItem('dsprogress'));
+      this.currentQuestion = parseInt(localStorage.getItem('dsCurrentQ'));
+      this.correctAnswer = parseInt(localStorage.getItem('dscorrect'));
+      this.inCorrectAnswer = parseInt(localStorage.getItem('dsincorrect'));
+      this.isQuizCompleted = JSON.parse(localStorage.getItem('dsCompleted'));
+    }
     this.getAllQuestions();
     this.startCounter();
     if(this.points > 0){
       this.isQuizCompleted = true;
-      JSON.parse(localStorage.getItem('dsMarks'))
     }
   }
   getAllQuestions() {
@@ -46,24 +52,31 @@ export class AnalyserComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.inCorrectAnswer++;
+    localStorage.setItem('dsincorrect', JSON.stringify(this.inCorrectAnswer));
+    localStorage.setItem('dsCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    localStorage.setItem('dsCurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 
     if(currentQno === this.questionList.length){
       this.isQuizCompleted = true;
+      localStorage.setItem('dsCompleted', JSON.stringify( this.isQuizCompleted));
       this.stopCounter();
     }
     if (option.correct) {
       this.points += 1;
       localStorage.setItem('dsMark', JSON.stringify(this.points));
       this.correctAnswer++;
+      localStorage.setItem('dscorrect', JSON.stringify(this.correctAnswer));
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('dsCurrentQ', JSON.stringify( this.currentQuestion));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -72,7 +85,9 @@ export class AnalyserComponent implements OnInit {
     } else {
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('dsCurrentQ', JSON.stringify( this.currentQuestion));
         this.inCorrectAnswer++;
+        localStorage.setItem('dsincorrect', JSON.stringify(this.inCorrectAnswer));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -108,10 +123,17 @@ export class AnalyserComponent implements OnInit {
     this.counter = 60;
     this.currentQuestion = 0;
     this.progress = "0";
+    localStorage.removeItem('dsprogress');
+    localStorage.removeItem('dsCurrentQ');
+    localStorage.removeItem('dscorrect');
+    localStorage.removeItem('dsincorrect');
+    localStorage.removeItem('dsisMarks');
+    localStorage.removeItem('dsCompleted');
 
   }
   getProgressPercent() {
     this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    localStorage.setItem('dsprogress', JSON.stringify(this.progress));
     return this.progress;
 
   }

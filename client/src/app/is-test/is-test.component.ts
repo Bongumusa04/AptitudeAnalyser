@@ -31,11 +31,17 @@ export class IsTestComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(parseInt(localStorage.getItem('CurrentQ')) > 0){
+      this.progress = JSON.parse(localStorage.getItem('progress'));
+      this.currentQuestion = parseInt(localStorage.getItem('CurrentQ'));
+      this.correctAnswer = parseInt(localStorage.getItem('correct'));
+      this.inCorrectAnswer = parseInt(localStorage.getItem('incorrect'));
+      this.isQuizCompleted = JSON.parse(localStorage.getItem('Completed'));
+    }
     this.getAllQuestions();
     this.startCounter();
     if(this.points > 0){
       this.isQuizCompleted = true;
-      JSON.parse(localStorage.getItem('isMarks'))
     }
   }
   getAllQuestions() {
@@ -46,24 +52,31 @@ export class IsTestComponent implements OnInit {
   }
   nextQuestion() {
     this.currentQuestion++;
+    this.inCorrectAnswer++;
+    localStorage.setItem('incorrect', JSON.stringify(this.inCorrectAnswer));
+    localStorage.setItem('CurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   previousQuestion() {
     this.currentQuestion--;
+    localStorage.setItem('CurrentQ', JSON.stringify( this.currentQuestion));
     this.getProgressPercent();
   }
   answer(currentQno: number, option: any) {
 
     if(currentQno === this.questionList.length){
-      this.isQuizCompleted = true;
-      localStorage.setItem('isMark', JSON.stringify(this.points));
+      this.isQuizCompleted = true;  
+      localStorage.setItem('Completed', JSON.stringify( this.isQuizCompleted));
       this.stopCounter();
     }
     if (option.correct) {
       this.points += 1;
+      localStorage.setItem('isMark', JSON.stringify(this.points));
       this.correctAnswer++;
+      localStorage.setItem('correct', JSON.stringify(this.correctAnswer));
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('CurrentQ', JSON.stringify( this.currentQuestion));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -72,7 +85,9 @@ export class IsTestComponent implements OnInit {
     } else {
       setTimeout(() => {
         this.currentQuestion++;
+        localStorage.setItem('CurrentQ', JSON.stringify( this.currentQuestion));
         this.inCorrectAnswer++;
+        localStorage.setItem('incorrect', JSON.stringify(this.inCorrectAnswer));
         this.resetCounter();
         this.getProgressPercent();
       }, 3000);
@@ -108,11 +123,17 @@ export class IsTestComponent implements OnInit {
     this.counter = 60;
     this.currentQuestion = 0;
     this.progress = "0";
-
+    localStorage.removeItem('progress');
+    localStorage.removeItem('CurrentQ');
+    localStorage.removeItem('correct');
+    localStorage.removeItem('incorrect');
+    localStorage.removeItem('isMarks');
+    localStorage.removeItem('Completed');
   }
   getProgressPercent() {
     this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    
     return this.progress;
-
+    
   }
 }
